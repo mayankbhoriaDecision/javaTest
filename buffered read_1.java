@@ -102,3 +102,62 @@ public class UserBO {
 
 
 }
+
+
+
+
+
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Main {
+
+	public static void main(String[] args){
+		
+		//Your code here
+
+
+
+		try {
+
+
+       
+      BufferedReader br = new BufferedReader(new FileReader("input.csv"));
+
+
+	  UserBO UserReadOBJ = new UserBO();
+
+	  	UserReadOBJ.readFromFile(br);
+      
+
+
+    	}
+    	catch(IOException e) 
+		{
+
+
+      e.printStackTrace();
+
+
+   		 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}
+}
+
+
