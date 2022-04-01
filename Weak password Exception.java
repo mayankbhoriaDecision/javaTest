@@ -48,25 +48,18 @@ public class User {
 }
 
 
-
-
-
-
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-public class UserBO throws WeakPasswordException 
+public class UserBO 
 {
 	//Your code here
 
 
-	public static boolean containsSpecialCharacter(String s) 
-	{
-    return (s == null) ? false : s.matches("[^A-Za-z0-9 ]");
-	}
+	 
 
-
-	public static void validate(User u)	
+	public static void validate(User u)	throws WeakPasswordException 
 	{
 
 		String password=u.getPSWRD();
@@ -84,7 +77,22 @@ public class UserBO throws WeakPasswordException
 			lenF=true;
 		}
 
-		special=containsSpecialCharacter(password);
+		 
+
+Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
+Matcher m = p.matcher(password);
+special = m.find();
+
+
+
+
+
+
+
+
+
+
+
 
             for (int i = 0; i < password.length(); i++)
 			 {
@@ -103,6 +111,14 @@ public class UserBO throws WeakPasswordException
 
               }
 
+
+    
+        
+
+
+
+
+
 		if(       (lenF&&hasDigit&&hasLetter&&special) ==false)
 		{
 				throw new WeakPasswordException("Your password is weak");
@@ -113,6 +129,11 @@ public class UserBO throws WeakPasswordException
 
 
 }
+
+
+
+
+
 
 
 
