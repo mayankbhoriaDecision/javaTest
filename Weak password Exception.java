@@ -1,4 +1,3 @@
-
 public class User {
 	//Your code here
 
@@ -40,6 +39,25 @@ public class User {
 	{
 		return password;
 	}
+
+      @Override          
+     public String toString()
+	{
+
+
+
+
+
+			String res= "Name:"+name+"\n" +  "Mobile:"+mobile +"\n" +  "Username:"+username+"\n"+"Password:"+password; 
+
+			return res;
+
+
+
+									 
+    }
+
+
 
 
 
@@ -199,13 +217,8 @@ Scanner in = new Scanner(System.in);
 
              Checker.validate(  UserOBJ );
 		 
-                       System.out.println(   "Name:"+str[0]   );
-
-											System.out.println(   "Mobile:"+str[1]   );
-
-											System.out.println(   "Username:"+str[2]   );
-
-											System.out.println(   "Password:"+str[3]   );
+                      System.out.println(UserOBJ.toString());
+		 
 
 											 
 
