@@ -55,6 +55,7 @@ public class User {
 
 
 
+
 import java.util.ArrayList;
 import java.io.*;
 
@@ -63,10 +64,21 @@ import java.io.*;
 
 public class UserBO {
 
+
+
+
+
+
+
+
+
+
+
+
 	public static void writeFile(ArrayList<User> userList, BufferedWriter bw) throws Exception {
 		//write your code here
 
-
+			System.out.println("writing");
 		  try
         {
 
@@ -78,25 +90,27 @@ public class UserBO {
 
            bw.write(temp.getName());
 
-			bw.write("\"");
+			bw.write(",");
 
 	
            bw.write(temp.getMobile());
 
-			bw.write("\"");
+			bw.write(",");
 
            bw.write(temp.getUsername());
 
-			bw.write("\"");
+			bw.write(",");
 
 
            bw.write(temp.getPassword());
 
-			bw.write("\"");
+		
 
 
             
         }
+
+		bw.close();
 
 		}
 		 catch (IOException except)
@@ -110,8 +124,21 @@ public class UserBO {
 
 
 	}
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 
 
